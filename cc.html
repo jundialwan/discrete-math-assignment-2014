@@ -1,0 +1,93 @@
+<!DOCTYPE Html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Diffie Hellman Algorithm Explanation</title>
+		<link rel="stylesheet" href="css/index.css">
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<span id="top" class="bold-grey twofour-em serif-font"><b>Diffie-Hellman Algorithm Explanation</b></span><br>
+			<span class="light-grey onesix-em serif-font">Assignment 1 - Discrete Matemathics 2</span><br>
+		</header>
+		
+		<div id="navigation">
+			<div class="button-menu" onclick="menubar()"></div>				
+			<nav>
+				<ul class="bold-grey serif-font onetwo-em">
+					<li class="bold-grey two-em serif-font"><b>Menu</b></li>
+					<li><a href="index.html#top">Home</a>
+						<ul>
+							<li><a href="index.html#sejarah">Sejarah</a></li>
+							<li><a href="index.html#metode">Metode</a></li>
+							<li><a href="index.html#teori">Teori</a></li>
+							<li><a href="index.html#contoh">Contoh</a></li>
+						</ul>
+					</li>
+					<li><a href="demo.html">Demo</a></li>
+					<li><a href="prm.html">Primitive Root Modulo</a></li>
+					<li><a href="http://en.wikipedia.org/wiki/Modular_arithmetic" target="_blank">Aritmatika Modular</a></li>
+					<li><a href="http://en.wikipedia.org/wiki/Discrete_logarithm_problem" target="_blank">Discrete Logartihm Problem</a></li>
+					<li><a href="cc.html">Caesar Cipher</a></li>
+					<li><b><a href="download.html">Download</a></b></li>
+				</ul>
+			</nav>
+		</div>
+
+
+		<div id="main">
+			<div id="content">
+				<span id="sejarah" class="bold-grey sans-font twofour-em"><b>Caesar Cipher</b></span>
+				<p class="bold-grey serif-font two-em">
+					Caesar Cipher merupakan algoritma enskripsi yang paling kuno. 'Algoritma' ini sudah dipakai sejak zaman kerajaan Romawi dibawah kepemimpinan Julio Caesar untuk mengirimkan pesan dengan aman walaupun pesan dibajak oleh musuh. Implementasi dari program Caesar Cipher cukup mudah. Prinsip perhitungan yang dilakukan pada algoritma Caesar Cipher ini adalah artimatika modular. Secara umum algoritma enskripsi dari Caesar Cipher adalah <b>E<sub>n</sub>(x) = (x + n) mod 26</b>, dengan <b>x</b> adalah posisi huruf yang dienskripsi dan <b>n</b> adalah besar pergeseran yang dilakukan untuk menenskripsi data. Sementara algoritma deskripsi caesar cipher adalah <b>D<sub>n</sub>(x) = (x - n) mod 26</b>. Makna dari <b>mod 26</b> adalah banyaknya jumlah huruf alphabet yang berjumlah <b>26 huruf</b>.
+					<br>
+					
+				</p>
+				
+				<div id="caesar-img"><img src="img/Caesar3.png" width="320" height="180" alt=
+				"caesar cipher" title="caesar cipher" /></div><br><br><br><br><br><br><br><br><br><br>
+
+				<p class="bold-grey serif-font two-em">
+					Berikut adalah pseudocode dari algoritma caesar cipher. Algoritma ini cukup mudah untuk diimplementasikan dalam program komputer.
+					<br>
+				</p><br>
+				<pre class="light-grey onetwo-em">
+					<ol class="list-code">
+						<li><span class="light-grey">/* Pseudo-code of Caesar Cipher */</span></li>
+						<li><span class="light-grey">funciton cipher(string x, integer n)</span></li>
+						<li><span class="light-grey"></span></li>
+						<li><span class="light-grey">cipher_text = x.toArray();</span></li>
+						<li><span class="light-grey"></span></li>
+
+						<li><span class="light-grey">for (int i ← 0; i &lt; x.length; i++)do</span></li>
+
+						<li><span class="light-grey">    cipher_text[i] ← (char)((95+((karakter[i]-‘’)+key)) mod 95+’’);</span></li>					
+						<li><span class="light-grey"></span></li>
+						<li><span class="light-grey">for(int i ← 0; i &lt; cipher_text.size) </span></li>
+						<li><span class="light-grey">    print(cipher_text[i])</span></li>
+						<li><span class="light-grey"></span></li>
+						<li><span class="light-grey"></span></li>
+
+					</ol>
+				</pre>
+				<span id="referensi" class="bold-grey sans-font twofour-em"><b>Referensi</b></span>
+				<p class="bold-grey serif-font two-em">
+					<ol class="serif-font onetwo-em">
+						<li><a class="serif-font onetwo-em" href="http://en.wikipedia.org/wiki/Caesar_cipher" target="_blank">http://en.wikipedia.org/wiki/Caesar_cipher</a></li>
+					</ol>
+					
+				</p><br>
+				<span><a href="#top" class="two-em">top</a></span>
+			</div>
+			<div id="footer">
+				<span class="bold-grey sans-font onetwo-em">Copyright &copy; Jundi Ahmad Alwan 2014</span><br>
+				<span class="bold-grey serif-font one-em">Pengembangan dalam rangka Assignment 1 matkul Matematika Diskret 2
+				</span><br><br>
+				<span class="light-grey sans-font one-em">Jundi Ahmad Alwan, 13xxxxxxxxx, B</span>				
+			</div>
+		</div>
+	</body>
+</html>

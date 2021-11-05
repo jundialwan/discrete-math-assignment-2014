@@ -1,0 +1,122 @@
+<!DOCTYPE Html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Diffie Hellman Algorithm Explanation</title>
+		<link rel="stylesheet" href="css/index.css">
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<span id="top" class="bold-grey twofour-em serif-font"><b>Diffie-Hellman Algorithm Explanation</b></span><br>
+			<span class="light-grey onesix-em serif-font">Assignment 1 - Discrete Matemathics 2</span><br>
+		</header>
+		
+		<div id="navigation">
+			<div class="button-menu" onclick="menubar()"></div>				
+			<nav>
+				<ul class="bold-grey serif-font onetwo-em">
+					<li class="bold-grey two-em serif-font"><b>Menu</b></li>
+					<li><a href="#top">Home</a>
+						<ul>
+							<li><a href="#sejarah">Sejarah</a></li>
+							<li><a href="#metode">Metode</a></li>
+							<li><a href="#teori">Teori</a></li>
+							<li><a href="#contoh">Contoh</a></li>
+						</ul>
+					</li>
+					<li><a href="demo.html">Demo</a></li>
+					<li><a href="prm.html">Primitive Root Modulo</a></li>
+					<li><a href="http://en.wikipedia.org/wiki/Modular_arithmetic" target="_blank">Aritmatika Modular</a></li>
+					<li><a href="http://en.wikipedia.org/wiki/Discrete_logarithm_problem" target="_blank">Discrete Logartihm Problem</a></li>
+					<li><a href="cc.html">Caesar Cipher</a></li>
+					<li><b><a href="download.html">Download</a></b></li>
+				</ul>
+			</nav>
+		</div>
+
+		<div id="main">
+			<div id="content">
+				<span id="sejarah" class="bold-grey sans-font twofour-em"><b>Sejarah</b></span>
+				<p class="bold-grey serif-font two-em">
+					Pertukaran Kunci Diffie-Hellman (selanjutnya disebut D-H) merupakan sebuah metode untuk bertukar kunci yang akan digunakan untuk proses enskripsi pesan atau data. Metode D-H merupakan salah satu pelopor metode pertukaran kunci di bidang <a href="http://en.wikipedia.org/wiki/Cryptography" target="_blank">kriptografi</a>. Metode ini pertama kali dipublikasikan oleh <a href="http://en.wikipedia.org/wiki/Whitfield_Diffie" target="_blank">Whitfield Diffie</a> dan <a href="http://en.wikipedia.org/wiki/Martin_Hellman" target="_blank">Martin Hellman</a> pada tahun 1976.
+					Metode D-H memungkinkan dilakukannya pertukaran kunci antara dua atau lebih pihak tanpa pihak-pihak tersebut harus bertemu atau berkomunikasi terlebih dahulu. <br>
+					Sampai saat ini metode D-H masih digunakan untuk menenskripsi data dan informasi, khususnya data dan informasi di internet. Contohnya, metode D-H digunakan di The Secure Shell (SSH) Transfer Layer Protocol.
+
+					<br>
+				</p>
+
+				<br>
+				<span id="metode" class="bold-grey sans-font twofour-em"><b>Metode</b></span>
+				<p class="bold-grey serif-font two-em">
+					Metode yang digunakan D-H pada dasarnya adalah sebuah prinsip aritmatika modular. Tahap terpenting dari metode D-H adalah ketika dua pihak bertukar public key masing-masing dan mengkalkulasikan public key temannya dengan bilangan rahasia miliknya dan bilangan p dan g, p adalah prima dan g adalah primitive root modulo dari p. Bilangan p yang biasa digunakan dalam aplikasi enskripsi data merupakan bilangan bulat besar yang terdiri dari 100-300 digit. Mengapa? Dengan memakai bilangan bulat yang sangat besar maka metode D-H akan sulit untuk dipecahkan dengan metode discrete logarithm, baca bagian permasalahan discrete logarithm. <br>
+					Berikut beberapa materi video yang dapat mendukung pemahaman Metode D-H:
+				</p><br>
+
+				<iframe src="http://www.youtube.com/embed/videoseries?list=PLP6PHJ8SLR6AA93UEXGaDFUDc8paCCsiD" allowfullscreen></iframe><br><br>
+
+				<span id="teori" class="bold-grey sans-font twofour-em"><b>Teori</b></span>
+				<p class="bold-grey serif-font two-em">
+					Ada beberapa teori yang dipakai dalam pengaplikasian metode D-H ini. Teori tersebut antara lain:
+				</p>
+						<ol class="bold-grey serif-font two-em">
+							<li><a href="http://en.wikipedia.org/wiki/Modular_arithmetic" target="_blank">Aritmatika Modular</a></li>
+							<li><a href="prm.html">Primitive Root Modulo</a></li>
+							<li><a href="http://en.wikipedia.org/wiki/Discrete_logarithm_problem" target="_blank">Discrete Logarithm Problem</a></li>
+						</ol>
+				<p class="bold-grey serif-font two-em">
+					Teori-teori tersebut dimanfaatkan sebagai prinsip dasar berfungsinya metode D-H. Selain itu teori yang saya manfaatkan dalam enskripsi program adalah <a href="cc.html">Caesar Cipher</a>.				
+				</p><br>
+
+				<span id="contoh" class="bold-grey sans-font twofour-em"><b>Contoh</b></span>
+				<p class="bold-grey serif-font two-em">
+					Alice dan  Bob sepakat untuk menggunakan bilangan prima p = 23 dan g = 5 (g adalah primitive root modulo dari 23).
+					<br>
+					Alice memilih bilangan rahasia a = 6, dan mengirimkan Bob bilangan A.
+					<br>
+					<b>A = g^a mod p </b><br>
+					<b>A = 56 mod 23 = 8</b>
+					<br>
+					Bob memilih bilangan rahasia b = 15, dan mengirimkan Alice bilangan B.
+					<br>
+					<b>B = g^b mod p </b>
+					<br>
+					<b>B = 515 mod 23 = 19</b>
+					<br><br>
+					Kemudian, Alice menghitung s, shared key. <br>
+					<b>s = B^a mod p </b>
+					<br>
+					<b>s = 196 mod 23 = 2 </b>
+					<br>
+					Bob menghitung s, shared key.
+					<br>
+					<b>s = A^b mod p </b>
+					<br>
+					<b>s = 815 mod 23 = 2</b>
+					<br>
+					Alice dan Bob kini memiliki shared key yang sama.
+
+					
+				</p><br>
+
+				<span id="referensi" class="bold-grey sans-font twofour-em"><b>Referensi</b></span>
+				<p class="bold-grey serif-font two-em">
+					<ol class="serif-font onetwo-em">
+						<li><a class="serif-font onetwo-em" href="http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange" target="_blank">http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange</a></li>
+					</ol>
+					
+				</p><br>
+				<span><a href="#top" class="two-em">top</a></span>
+			</div>			
+			<div id="footer">
+				<span class="bold-grey sans-font onetwo-em">Copyright &copy; Jundi Ahmad Alwan 2014</span><br>
+				<span class="bold-grey serif-font one-em">Pengembangan dalam rangka Assignment 1 matkul Matematika Diskret 2
+				</span><br><br>
+				<span class="light-grey sans-font one-em">Jundi Ahmad Alwan, 13xxxxxxxxx, B</span>
+			</div>
+		</div>
+
+	</body>
+</html>
